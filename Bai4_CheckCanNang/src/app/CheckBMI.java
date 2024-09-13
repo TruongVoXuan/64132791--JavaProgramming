@@ -8,31 +8,42 @@ public class CheckBMI {
 		
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner (System.in);
-		float height = scanner.nextFloat();
+		float height = 0;
+
 		while (true) {
-			try {
-				System.out.print("Nhap vao chieu cao(m):");
-				
-			}
-			catch (Exception e) {
-                System.out.println("Dữ liệu không hợp lệ. Vui lòng nhập lại số.");
-                scanner.next();
-            }
-			if( height >200 && height <1 ) break;
+		    try {
+		        System.out.print("Nhập vào chiều cao (m): ");
+		        height = scanner.nextFloat();
+		        if (height > 0 && height < 3) {
+		            break;
+		        } else {
+		            System.out.println("Chiều cao phải lớn hơn 0 và nhỏ hơn 3 mét.");
+		        }
+		    } catch (InputMismatchException e) {
+		        System.out.println("Dữ liệu không hợp lệ. Vui lòng nhập lại số.");
+		        scanner.next(); 
+		    }
 		}
-		
-		 float weight = scanner.nextFloat();
+
+		 float weight = 0;
 		  
 		while (true) {
 			try {
 				System.out.print("Nhap vao can nang(kg):");
+				weight = scanner.nextFloat();
+				if( weight >0 && weight < 200 ) {
+					break;
+				}
 				
+				else {
+					System.out.println("Cân nặng phải lớn hơn 0 và bé hơn 200");
+				}
 			}
-			catch (Exception e) {
+			catch (InputMismatchException e) {
                 System.out.println("Dữ liệu không hợp lệ. Vui lòng nhập lại số.");
                 scanner.next();
             }
-			if( weight >2 && weight <0 ) break;
+		
 		}
 		
 		
