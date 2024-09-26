@@ -24,7 +24,10 @@ public class BT_ArrayList {
 		for(int i =0; i<food.size(); i++) {
 			System.out.println(food.get(i));
 		}
+	
 
 	}
 
+		
 }
+
