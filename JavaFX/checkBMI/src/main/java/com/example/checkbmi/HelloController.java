@@ -8,9 +8,10 @@ import javafx.scene.control.TextField;
 public class HelloController {
 
   @FXML
-  private TextField txtCao, txtNang, txtKQ;
+  private TextField txtTen, txtCao, txtNang, txtKQ;
   public void check(ActionEvent event) {
     try{
+      String ten = txtTen.getText();
       double cao = Double.parseDouble(txtCao.getText());
       double nang = Double.parseDouble(txtNang.getText());
       double KQ = Double.parseDouble(String.valueOf(nang/(cao*cao)));
@@ -23,7 +24,7 @@ public class HelloController {
         result = "Béo phì";
       }
 
-      txtKQ.setText(String.format("BMI:%.2f - %s", KQ, result));
+      txtKQ.setText(String.format("Name:%s - BMI:%.2f - %s",ten, KQ, result));
     } catch (NumberFormatException e) {
       txtKQ.setText("Input không hợp lệ");
     }
