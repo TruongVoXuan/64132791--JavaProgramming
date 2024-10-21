@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="com.example.carroapp.MainController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" spacing="10">
+    <GridPane fx:id="gridPane" alignment="center" hgap="10" vgap="10">
+        <Button fx:id="button1" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button2" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button3" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="0" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button4" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button5" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button6" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button7" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button8" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="100" prefHeight="100"/>
+        <Button fx:id="button9" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="100" prefHeight="100"/>
+    </GridPane>
+    <Button text="Reset" onAction="#handleResetAction" prefWidth="100"/>
+</VBox>
