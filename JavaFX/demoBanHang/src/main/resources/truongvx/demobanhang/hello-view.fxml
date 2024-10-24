@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="truongvx.demobanhang.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="truongvx.demobanhang.HelloController">
+   <children>
+      <TableView fx:id="tableView" layoutX="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="557.0">
+         <columns>
+            <TableColumn fx:id="colName" prefWidth="188.00006103515625" text="Name" />
+            <TableColumn fx:id="colPrice" prefWidth="186.39996337890625" text="Price" />
+            <TableColumn fx:id="colDescription" prefWidth="224.79998779296875" text="Description" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtName" layoutX="14.0" layoutY="341.0" promptText="Name" />
+      <TextField fx:id="txtDescription" layoutX="334.0" layoutY="341.0" promptText="Description" />
+      <TextField fx:id="txtPrice" layoutX="172.0" layoutY="341.0" promptText="Price" />
+      <Button layoutX="511.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnAdd" text="Add" />
+      <Button fx:id="btnXoa" layoutX="497.0" layoutY="359.0" mnemonicParsing="false" onAction="#btnXoa" prefHeight="26.0" prefWidth="67.0" text="Remove" />
+   </children>
+</AnchorPane>

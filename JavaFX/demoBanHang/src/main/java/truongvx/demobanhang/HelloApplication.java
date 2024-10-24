@@ -8,17 +8,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 
-public class HelloApplication {
-  //extends Application
-//  @Override
-//  public void start(Stage stage) throws IOException {
-//    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-//    Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//    stage.setTitle("Hello!");
-//    stage.setScene(scene);
-//    stage.show();
-//  }
-
+public class HelloApplication extends Application { // Sửa lỗi extends Application
+  @Override
+  public void start(Stage stage) throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+    Scene scene = new Scene(fxmlLoader.load());
+    stage.setTitle("Hello!");
+    stage.setScene(scene);
+    stage.show();
+  }
+  /*
   public static void main(String[] args) throws ClassNotFoundException, SQLException {
     Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -42,5 +41,5 @@ public class HelloApplication {
       String moTa = ketQua.getString(4);
       System.out.println(id+ " | " + tenSp + " | " + giaSp+" | "+moTa);
     }
-  }
+  }*/
 }
