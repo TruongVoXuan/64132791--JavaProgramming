@@ -1,0 +1,8 @@
+module truongvx.client {
+  requires javafx.controls;
+  requires javafx.fxml;
+
+
+  opens truongvx.client to javafx.fxml;
+  exports truongvx.client;
+}
