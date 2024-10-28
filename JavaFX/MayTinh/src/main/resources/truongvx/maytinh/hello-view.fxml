@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="center" prefHeight="424.0" prefWidth="324.0" spacing="10" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="truongvx.maytinh.HelloController">
+  <padding>
+    <Insets bottom="20" left="20" right="20" top="20" />
+  </padding>
+  <Label text="Phép Tính">
+    <font>
+      <Font name="System Bold" size="19.0" />
+    </font>
+  </Label>
+
+  <TextField fx:id="display" editable="false" style="-fx-font-size: 18px; -fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 5px; -fx-padding: 10px;" />
+
+  <GridPane alignment="center" hgap="10" vgap="10">
+    <Button onAction="#handleButtonPress" text="7" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <Button onAction="#handleButtonPress" text="8" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Button onAction="#handleButtonPress" text="9" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+    <Button onAction="#handleButtonPress" text="/" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+    <Button onAction="#handleButtonPress" text="sin" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+
+    <Button onAction="#handleButtonPress" text="4" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonPress" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonPress" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonPress" text="*" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <Button onAction="#handleButtonPress" text="cos" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+
+    <Button onAction="#handleButtonPress" text="1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonPress" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonPress" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonPress" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    <Button onAction="#handleButtonPress" text="e^x" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+    <Button onAction="#handleButtonPress" text="0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonPress" text="." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonPress" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonPress" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+    <Button onAction="#handleButtonPress" text="ln" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+
+    <Button onAction="#handleButtonPress" text="log" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Button onAction="#handleButtonPress" text="√" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Button onAction="#handleReset" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+  </GridPane>
+</VBox>
