@@ -55,7 +55,8 @@ public class LoginApp extends Application {
   }
 
   private boolean authenticate(String username, String password) {
-    try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "user1", "password1")) {
+    String url = "jdbc:mysql://localhost:3306/client?useSSL=false&serverTimezone=UTC&autoReconnect=true";
+    try (Connection connection = DriverManager.getConnection(url, "user1", "password1")) {
       String query = "SELECT * FROM users WHERE username = ? AND password = ?";
       PreparedStatement statement = connection.prepareStatement(query);
       statement.setString(1, username);
@@ -67,6 +68,8 @@ public class LoginApp extends Application {
       return false;
     }
   }
+
+
 
   private void showAlert(Alert.AlertType alertType, String message) {
     Alert alert = new Alert(alertType);
@@ -83,6 +86,7 @@ public class LoginApp extends Application {
       stage.show();
     } catch (Exception e) {
       e.printStackTrace();
+
     }
   }
 
