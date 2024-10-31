@@ -1,0 +1,34 @@
+ /* style.css */
+ .root {
+     -fx-font-family: 'Arial';
+     -fx-background-color: #f0f0f0;
+ }
+
+ .label {
+     -fx-font-size: 14px;
+     -fx-text-fill: #333;
+ }
+
+ .text-field {
+     -fx-background-color: #fff;
+     -fx-border-color: #ccc;
+     -fx-border-radius: 5px;
+     -fx-padding: 5px;
+ }
+
+ .button {
+     -fx-background-color: #4CAF50;
+     -fx-text-fill: white;
+     -fx-font-size: 14px;
+     -fx-padding: 10px;
+     -fx-border-radius: 5px;
+     -fx-cursor: hand;
+ }
+
+ .button:hover {
+     -fx-background-color: #45a049;
+ }
+
+ .button:pressed {
+     -fx-background-color: #3e8e41;
+ }

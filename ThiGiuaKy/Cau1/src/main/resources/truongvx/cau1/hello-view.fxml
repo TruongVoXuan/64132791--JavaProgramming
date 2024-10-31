@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="truongvx.cau1.MayTinhController" stylesheets="@style.css">
+  <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+
+  <Label text="Nhập số 1:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+  <TextField fx:id="number1Field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+  <Label text="Nhập số 2:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+  <TextField fx:id="number2Field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+  <Label text="Kết quả:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+  <TextField fx:id="resultField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+  <Button onAction="#handleAdd" text="+" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+  <Button onAction="#handleSubtract" prefHeight="26.0" prefWidth="26.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+  <Button onAction="#handleMultiply" prefHeight="26.0" prefWidth="25.0" text="*" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+  <Button onAction="#handleDivide" prefHeight="26.0" prefWidth="28.0" text="/" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+  <Button onAction="#handleDiv" prefHeight="26.0" prefWidth="37.0" text="div" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+  <Button onAction="#handleMod" text="mod" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
