@@ -1,74 +1,64 @@
 package truongvx.cau3;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-public class QuizGameFrame extends JFrame {
-  private JLabel pointLabel;
-  private JLabel timerLabel;
-  private JLabel questionLabel;
-  private JButton[] answerButtons;
-  private JButton generateQuestionButton;
-  private int point = 0;
-  private int time = 30;
-  private Timer timer;
+public class QuizGameFrame {
+  private Label pointLabel;
+  private Label timerLabel;
+  private Label questionLabel;
+  private Button[] answerButtons;
+  private Button generateQuestionButton;
   private QuizGameLogic logic;
+  private Stage stage;
 
-  public QuizGameFrame() {
-    // Set up the frame
-    setTitle("Quiz Game");
-    setSize(400, 400);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLayout(new GridLayout(6, 2));
+  public QuizGameFrame(Stage stage) {
+    this.stage = stage;
+    stage.setTitle("Quiz Game");
 
     // Initialize logic
     logic = new QuizGameLogic(this);
 
+    // Set up the layout
+    GridPane layout = new GridPane();
+    layout.setVgap(10);
+    layout.setHgap(10);
+
     // Create the labels
-    pointLabel = new JLabel("Point: 0");
-    timerLabel = new JLabel("Timer: 30");
-    questionLabel = new JLabel("Question:");
+    pointLabel = new Label("Point: 0");
+    timerLabel = new Label("Timer: 30");
+    questionLabel = new Label("Question:");
 
     // Create the buttons
-    answerButtons = new JButton[4];
+    answerButtons = new Button[4];
     for (int i = 0; i < answerButtons.length; i++) {
-      answerButtons[i] = new JButton("Button " + (i + 1));
+      answerButtons[i] = new Button("Answer " + (i + 1));
+      int index = i;
+      answerButtons[i].setOnAction(e -> logic.checkAnswer(answerButtons[index]));
     }
-    generateQuestionButton = new JButton("Generate Question");
+    generateQuestionButton = new Button("Generate Question");
+    generateQuestionButton.setOnAction(e -> logic.generateQuestion());
 
-    // Add the components to the frame
-    add(pointLabel);
-    add(timerLabel);
-    add(new JLabel(" ")); // Empty label for spacing
-    add(new JLabel(" ")); // Empty label for spacing
-    add(questionLabel);
-    add(new JLabel(" ")); // Empty label for spacing
-    add(answerButtons[0]);
-    add(answerButtons[1]);
-    add(answerButtons[2]);
-    add(answerButtons[3]);
-    add(generateQuestionButton);
-
-    // Set the button actions
-    for (JButton button : answerButtons) {
-      button.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          logic.checkAnswer(button);
-        }
-      });
+    // Add components to the layout
+    layout.add(pointLabel, 0, 0);
+    layout.add(timerLabel, 1, 0);
+    layout.add(questionLabel, 0, 1, 2, 1);
+    for (int i = 0; i < answerButtons.length; i++) {
+      layout.add(answerButtons[i], i % 2, 2 + i / 2);
     }
-    generateQuestionButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        logic.generateQuestion();
-      }
-    });
+    layout.add(generateQuestionButton, 0, 4, 2, 1);
 
-    // Start the timer
+    // Create and set scene
+    Scene scene = new Scene(layout, 400, 300);
+    stage.setScene(scene);
+
+    // Start timer and show stage
     logic.startTimer();
+    stage.show();
   }
 
   public void updatePointLabel(int point) {
@@ -83,15 +73,17 @@ public class QuizGameFrame extends JFrame {
     questionLabel.setText(question);
   }
 
-  public JButton[] getAnswerButtons() {
+  public Button[] getAnswerButtons() {
     return answerButtons;
   }
 
-  public JLabel getQuestionLabel() {
+  public Label getQuestionLabel() {
     return questionLabel;
   }
 
   public void showEndMessage() {
-    JOptionPane.showMessageDialog(this, "Time's up! Your score: " + point);
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setContentText("Time's up! Your score: " + logic.getPoint());
+    alert.showAndWait();
   }
 }

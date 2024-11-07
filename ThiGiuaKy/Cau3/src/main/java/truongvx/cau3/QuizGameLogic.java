@@ -1,37 +1,36 @@
 package truongvx.cau3;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.util.Duration;
+
 import java.util.Random;
 
 public class QuizGameLogic {
   private QuizGameFrame frame;
   private int point = 0;
   private int time = 30;
-  private Timer timer;
+  private Timeline timer;
 
   public QuizGameLogic(QuizGameFrame frame) {
     this.frame = frame;
   }
 
   public void startTimer() {
-    timer = new Timer(1000, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (time > 0) {
-          time--;
-          frame.updateTimerLabel(time);
-        } else {
-          timer.stop();
-          for (JButton button : frame.getAnswerButtons()) {
-            button.setEnabled(false);
-          }
-          frame.showEndMessage();
-        }
+    timer = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+      if (time > 0) {
+        time--;
+        frame.updateTimerLabel(time);
+      } else {
+        timer.stop();
+        disableAnswerButtons();
+        frame.showEndMessage();
       }
-    });
-    timer.start();
+    }));
+    timer.setCycleCount(Timeline.INDEFINITE);
+    timer.play();
   }
 
   public void generateQuestion() {
@@ -43,17 +42,21 @@ public class QuizGameLogic {
     frame.updateQuestionLabel("What is " + num1 + " x " + num2 + "?");
 
     int correctButtonIndex = random.nextInt(4);
-    JButton[] buttons = frame.getAnswerButtons();
+    Button[] buttons = frame.getAnswerButtons();
     for (int i = 0; i < buttons.length; i++) {
       if (i == correctButtonIndex) {
         buttons[i].setText(String.valueOf(correctAnswer));
       } else {
-        buttons[i].setText(String.valueOf(random.nextInt(100)));
+        int wrongAnswer;
+        do {
+          wrongAnswer = random.nextInt(100);
+        } while (wrongAnswer == correctAnswer); // Ensure incorrect answers are not the same as the correct answer
+        buttons[i].setText(String.valueOf(wrongAnswer));
       }
     }
   }
 
-  public void checkAnswer(JButton button) {
+  public void checkAnswer(Button button) {
     int answer = Integer.parseInt(button.getText());
     String question = frame.getQuestionLabel().getText();
     String[] parts = question.split(" ");
@@ -64,9 +67,25 @@ public class QuizGameLogic {
     if (answer == correctAnswer) {
       point++;
       frame.updatePointLabel(point);
-      JOptionPane.showMessageDialog(frame, "Correct!");
+      showAlert("Correct!");
     } else {
-      JOptionPane.showMessageDialog(frame, "Incorrect!");
+      showAlert("Incorrect!");
+    }
+  }
+
+  public int getPoint() {
+    return point;
+  }
+
+  private void showAlert(String message) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setContentText(message);
+    alert.showAndWait();
+  }
+
+  private void disableAnswerButtons() {
+    for (Button button : frame.getAnswerButtons()) {
+      button.setDisable(true);
     }
   }
 }
