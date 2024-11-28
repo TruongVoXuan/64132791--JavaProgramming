@@ -20,7 +20,6 @@ public class NhanVienDAL {
     this.connect = connection;
   }
 
-
   public boolean Login(String username, String password) {
     // Kiểm tra nếu username hoặc password trống
     if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
@@ -82,7 +81,48 @@ public class NhanVienDAL {
     return false; // Đăng nhập thất bại
   }
 
+  public boolean createAccount(String username, String password) {
+    if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
+      System.out.println("Tên đăng nhập và mật khẩu không được để trống.");
+      return false;
+    }
+
+    if (connect != null) {
+      String insertData = "INSERT INTO nhanvien (username, password) VALUES (?, ?)";
+      try {
+        prepare = connect.prepareStatement(insertData);
+        prepare.setString(1, username);
+        prepare.setString(2, password);
+
+        int result = prepare.executeUpdate();
+
+        if (result > 0) {
+          System.out.println("Tạo tài khoản thành công.");
+          return true;
+        } else {
+          System.out.println("Không thể tạo tài khoản. Vui lòng thử lại.");
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+        System.out.println("Đã xảy ra lỗi khi kết nối hoặc truy vấn cơ sở dữ liệu.");
+      } finally {
+        try {
+          if (prepare != null) prepare.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    } else {
+      System.out.println("Không thể kết nối đến cơ sở dữ liệu.");
+    }
+    return false;
+  }
+
   public boolean AddNew(NhanVien nv) {
+    return true;
+  }
+
+  public  boolean Delete(int id) {
     return true;
   }
 }

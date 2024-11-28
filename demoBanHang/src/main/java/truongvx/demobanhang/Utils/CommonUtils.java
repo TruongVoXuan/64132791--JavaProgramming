@@ -1,48 +1,32 @@
 package truongvx.demobanhang.Utils;
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class CommonUtils {
 
-  /**
-   * Tạo hash SHA-512 cho chuỗi đầu vào
-   *
-   * @param input Chuỗi cần băm
-   * @return Giá trị hash dạng chuỗi (hexadecimal) hoặc null nếu có lỗi
-   */
-  public static String hashSHA512(String input) {
+  public static String encodePasswordSHA256(String input) {
     try {
-      // Khởi tạo đối tượng MessageDigest với thuật toán SHA-512
-      MessageDigest digest = MessageDigest.getInstance("SHA-512");
+      // Static getInstance method is called with hashing SHA-256
+      MessageDigest md = MessageDigest.getInstance("SHA-256");
 
-      // Băm chuỗi đầu vào và trả về mảng byte
-      byte[] encodedHash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
+      // digest() method is called to calculate message digest
+      // of an input digest() return array of byte
+      byte[] messageDigest = md.digest(input.getBytes());
 
-      // Chuyển mảng byte thành chuỗi dạng hexadecimal
-      return bytesToHex(encodedHash);
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
+      // Convert byte array into signum representation
+      BigInteger no = new BigInteger(1, messageDigest);
 
-  /**
-   * Chuyển mảng byte thành chuỗi dạng hexadecimal
-   *
-   * @param hash Mảng byte
-   * @return Chuỗi hexadecimal
-   */
-  private static String bytesToHex(byte[] hash) {
-    StringBuilder hexString = new StringBuilder();
-    for (byte b : hash) {
-      String hex = Integer.toHexString(0xff & b);
-      if (hex.length() == 1) {
-        hexString.append('0'); // Thêm số 0 nếu hex chỉ có 1 ký tự
+      // Convert message digest into hex value
+      String hashtext = no.toString(16);
+      while (hashtext.length() < 64) {
+        hashtext = "0" + hashtext;
       }
-      hexString.append(hex);
+      return hashtext;
+    } catch (NoSuchAlgorithmException e) {
+      throw new RuntimeException(e);
     }
-    return hexString.toString();
   }
 }
