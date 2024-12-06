@@ -98,11 +98,16 @@ public class HelloController {
     } else if (event.getSource() == cauCbtn) {
       cauCbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #3979a6, #8b0000);");
     }
+    else if (event.getSource() == cauDbtn) {
+      cauDbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #3979a6, #8b0000);");
+    }
+
   }
   private void defaultColorQuestion() {
-    cauAbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #3979a6, #4d8c7e);");
+    cauAbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);");
     cauBbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);");
     cauCbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);");
+    cauDbtn.setStyle("-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);");
 
   }
 
