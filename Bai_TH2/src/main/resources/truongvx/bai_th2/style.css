@@ -1,0 +1,52 @@
+.root {
+    -fx-font-family: 'Arial';
+    -fx-padding: 10;
+    -fx-background-color: #f0f0f0;
+}
+
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.radio-button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.result-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-background-color: #fff;
+    -fx-padding: 5;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
