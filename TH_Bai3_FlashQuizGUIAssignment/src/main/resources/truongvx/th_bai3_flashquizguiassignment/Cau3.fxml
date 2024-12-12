@@ -133,19 +133,19 @@
                         <String fx:value="btn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="cauAbtn" layoutX="141.0" layoutY="296.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án B">
+                  <Button fx:id="cauBbtn" layoutX="141.0" layoutY="296.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án B">
                      <styleClass>
                         <String fx:value="main-form1" />
                         <String fx:value="btn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="cauAbtn" layoutX="141.0" layoutY="358.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án C">
+                  <Button fx:id="cauCbtn" layoutX="141.0" layoutY="358.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án C">
                      <styleClass>
                         <String fx:value="main-form1" />
                         <String fx:value="btn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="cauAbtn" layoutX="141.0" layoutY="426.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án D">
+                  <Button fx:id="cauDbtn" layoutX="141.0" layoutY="426.0" mnemonicParsing="false" onAction="#changeColorQuestion" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH3.css" text="Phương án D">
                      <styleClass>
                         <String fx:value="main-form1" />
                         <String fx:value="btn" />

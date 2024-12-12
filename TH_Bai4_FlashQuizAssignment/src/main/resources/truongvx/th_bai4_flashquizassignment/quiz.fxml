@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="truongvx.th_bai4_flashquizassignment.HelloController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <AnchorPane layoutX="7.0" layoutY="10.0" prefHeight="552.0" prefWidth="217.0" stylesheets="@styleBaiTH4.css">
+                    <styleClass>
+                        <String fx:value="nav-form" />
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                    </styleClass>
+                    <children>
+                        <Label layoutX="60.0" layoutY="51.0" styleClass="label-title" stylesheets="@styleBaiTH4.css" text="FLASH QZ" textFill="#a42727">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <!-- Các nút câu hỏi -->
+                        <Button fx:id="question10Btn" layoutX="32.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 10" />
+                        <Button fx:id="question9Btn" layoutX="32.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 9" />
+                        <Button fx:id="question8Btn" layoutX="32.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 8" />
+                        <Button fx:id="question7Btn" layoutX="32.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 7" />
+                        <Button fx:id="question6Btn" layoutX="32.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 6" />
+                        <Button fx:id="question5Btn" layoutX="32.0" layoutY="331.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 5" />
+                        <Button fx:id="question4Btn" layoutX="32.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 4" />
+                        <Button fx:id="question3Btn" layoutX="32.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 3" />
+                        <Button fx:id="question2Btn" layoutX="32.0" layoutY="456.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 2" />
+                        <Button fx:id="question1Btn" layoutX="32.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleQuestionButton" prefHeight="26.0" prefWidth="149.0" styleClass="btn-nav" stylesheets="@styleBaiTH4.css" text="Câu 1" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="235.0" layoutY="10.0" prefHeight="552.0" prefWidth="726.0" stylesheets="@styleBaiTH4.css">
+                    <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                        <String fx:value="main-form" />
+                    </styleClass>
+                    <children>
+                        <AnchorPane fx:id="quizTextPane" layoutX="18.0" layoutY="14.0" prefHeight="190.0" prefWidth="686.0" stylesheets="@styleBaiTH4.css">
+                            <styleClass>
+                                <String fx:value="radius" />
+                                <String fx:value="main-form1" />
+                            </styleClass>
+                            <children>
+                                <Label fx:id="questionLabel" layoutX="254.0" layoutY="69.0" text="LỜI CÂU HỎI 1 Ở ĐÂY" textFill="#361616">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <!-- Các nút lựa chọn đáp án -->
+                        <Button fx:id="optionACircleBtn" layoutX="75.0" layoutY="231.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@styleBaiTH4.css" text="A">
+                     <styleClass>
+                        <String fx:value="circular-button" />
+                        <String fx:value="btn" />
+                        <String fx:value="container" />
+                     </styleClass></Button>
+                        <Button fx:id="optionABtn" layoutX="141.0" layoutY="233.0" mnemonicParsing="false" onAction="#handleAnswer" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH4.css" text="Phương án A">
+                     <styleClass>
+                        <String fx:value="main-form1" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
+
+                        <Button fx:id="optionBCircleBtn" layoutX="75.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@styleBaiTH4.css" text="B">
+                     <styleClass>
+                        <String fx:value="circular-button" />
+                        <String fx:value="btn" />
+                        <String fx:value="container" />
+                     </styleClass></Button>
+                        <Button fx:id="optionBBtn" layoutX="141.0" layoutY="296.0" mnemonicParsing="false" onAction="#handleAnswer" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH4.css" text="Phương án B">
+                     <styleClass>
+                        <String fx:value="main-form1" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
+
+                        <Button fx:id="optionCCircleBtn" layoutX="75.0" layoutY="365.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@styleBaiTH4.css" text="C">
+                     <styleClass>
+                        <String fx:value="circular-button" />
+                        <String fx:value="btn" />
+                        <String fx:value="container" />
+                     </styleClass></Button>
+                        <Button fx:id="optionCBtn" layoutX="141.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleAnswer" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH4.css" text="Phương án C">
+                     <styleClass>
+                        <String fx:value="main-form1" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
+
+                        <Button fx:id="optionDCircleBtn" layoutX="75.0" layoutY="433.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@styleBaiTH4.css" text="D">
+                     <styleClass>
+                        <String fx:value="circular-button" />
+                        <String fx:value="btn" />
+                        <String fx:value="container" />
+                     </styleClass></Button>
+                        <Button fx:id="optionDBtn" layoutX="141.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleAnswer" prefHeight="46.0" prefWidth="318.0" stylesheets="@styleBaiTH4.css" text="Phương án D">
+                     <styleClass>
+                        <String fx:value="main-form1" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
+
+                        <!-- Nhãn hiển thị điểm -->
+                        <Label fx:id="scoreLabel" layoutX="607.0" layoutY="426.0" text="ĐIỂM">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="scoreTextField" layoutX="552.0" layoutY="456.0" prefHeight="73.0" prefWidth="157.0" styleClass="nav-form" stylesheets="@styleBaiTH4.css" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
