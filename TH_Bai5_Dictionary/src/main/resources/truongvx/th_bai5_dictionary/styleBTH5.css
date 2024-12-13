@@ -1,0 +1,77 @@
+.radius{
+-fx-background-radius: 8px;
+}
+.shadow{
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+
+}
+.nav-form {
+-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #88d4b1);
+}
+.main-form{
+-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);
+}
+
+
+.main-form1 {
+-fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6);
+-fx-border-color: white; /* Màu viền trắng */
+    -fx-border-width: 2px; /* Độ dày của viền */
+    -fx-border-radius: 5px; /* Tùy chọn, làm tròn góc viền */
+    -fx-background-radius: 5px; /* Tương tự để viền bo tròn trùng khớp */
+}
+.white_bg{
+-fx-background-color: #fff;
+}
+.btn {
+-fx-background-color: linear-gradient(to bottom right, #3979a6, #4d8c7e);
+-fx-cursor: hand;
+-fx-text-fill: #fff;
+-fx-font-size: 14px;
+}
+.label-cauhoi {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+.label-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+.btn:hover {
+-fx-background-color: linear-gradient(to bottom right, #0fb565, #f98e33);
+}
+
+.circular-button {
+    -fx-background-color: linear-gradient(to bottom right, #a8e6cf, #2459a6); /* Nền gradient */
+    -fx-border-color: white; /* Viền trắng */
+    -fx-border-width: 2px; /* Độ dày viền */
+    -fx-border-radius: 50%; /* Bo tròn viền */
+    -fx-background-radius: 50%; /* Bo tròn nền */
+    -fx-pref-width: 50px; /* Chiều rộng nút */
+    -fx-pref-height: 50px; /* Chiều cao nút */
+    -fx-alignment: center; /* Căn giữa nội dung */
+    -fx-text-fill: white; /* Màu chữ */
+    -fx-font-weight: bold; /* Đậm chữ */
+}
+
+.container:hover .circular-button {
+    -fx-background-color: linear-gradient(to bottom right, #0fb565, #f98e33);
+    -fx-border-color: #ffffff; /* Viền sáng hơn */
+}
+
+.container:hover .btn {
+    -fx-text-fill: linear-gradient(to bottom right, #0fb565, #f98e33);
+    -fx-font-weight: bold; /* Chữ đậm hơn */
+}
+
+.btn-nav {
+-fx-background-color: linear-gradient(to bottom right, #3979a6, #4d8c7e);
+-fx-cursor: hand;
+-fx-text-fill: #fff;
+-fx-font-size: 14px;
+}
+.btn-nav:hover {
+-fx-background-color: linear-gradient(to bottom right, #3979a6, #8b0000);
+}

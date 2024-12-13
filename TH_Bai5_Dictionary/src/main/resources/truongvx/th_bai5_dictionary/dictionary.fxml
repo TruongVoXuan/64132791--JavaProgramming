@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="truongvx.th_bai5_dictionary.HelloController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-form" stylesheets="@styleBTH5.css">
+         <children>
+            <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="87.0" prefWidth="366.0" stylesheets="@styleBTH5.css" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="13.600000000000023" AnchorPane.topAnchor="14.0">
+               <children>
+                  <Label layoutX="136.0" layoutY="26.0" text="TỪ ĐIỂN" AnchorPane.bottomAnchor="24.800000000000004" AnchorPane.leftAnchor="136.0" AnchorPane.rightAnchor="136.79999999999998" AnchorPane.topAnchor="26.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="main-form" />
+                  <String fx:value="shadow" />
+                  <String fx:value="radius" />
+               </styleClass>
+            </AnchorPane>
+            <Separator layoutX="15.0" layoutY="114.0" prefHeight="2.0" prefWidth="360.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="114.0" />
+            <AnchorPane layoutX="16.0" layoutY="126.0" prefHeight="534.0" prefWidth="360.0" stylesheets="@styleBTH5.css" AnchorPane.bottomAnchor="7.600000000000023" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="15.199999999999989" AnchorPane.topAnchor="125.60000000000002">
+               <children>
+                  <TextField fx:id="textFieldSearch" layoutX="15.0" layoutY="53.0" prefHeight="46.0" prefWidth="210.0" promptText="Nhập từ cần tìm" stylesheets="@styleBTH5.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.59999999999997" AnchorPane.topAnchor="53.0">
+                     <styleClass>
+                        <String fx:value="label-cauhoi" />
+                        <String fx:value="white_bg" />
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Button fx:id="btnSearch" layoutX="261.0" layoutY="50.0" mnemonicParsing="false" stylesheets="@styleBTH5.css" text="Tìm" AnchorPane.rightAnchor="48.6">
+                     <styleClass>
+                        <String fx:value="btn-nav" />
+                        <String fx:value="circular-button" />
+                        <String fx:value="container" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </Button>
+                  <TextField fx:id="textFieldPA" layoutX="15.0" layoutY="224.0" prefHeight="72.0" prefWidth="210.0" stylesheets="@styleBTH5.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="135.39999999999998" AnchorPane.topAnchor="224.0">
+                     <styleClass>
+                        <String fx:value="label-cauhoi" />
+                        <String fx:value="white_bg" />
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label layoutX="14.0" layoutY="190.0" text="Phiên âm">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldTV" layoutX="15.0" layoutY="348.0" prefHeight="164.0" prefWidth="210.0" stylesheets="@styleBTH5.css" AnchorPane.leftAnchor="15.2" AnchorPane.rightAnchor="134.4">
+                     <styleClass>
+                        <String fx:value="label-cauhoi" />
+                        <String fx:value="white_bg" />
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label layoutX="15.0" layoutY="315.0" text="Nghĩa tiếng việt">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAdd" layoutX="261.0" layoutY="199.0" mnemonicParsing="false" stylesheets="@styleBTH5.css" text="+" AnchorPane.rightAnchor="48.6">
+                     <styleClass>
+                        <String fx:value="btn-nav" />
+                        <String fx:value="circular-button" />
+                        <String fx:value="container" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </Button>
+                  <TextField fx:id="textFieldAddNew" layoutX="15.0" layoutY="125.0" prefHeight="46.0" prefWidth="210.0" promptText="Nhập từ cần thêm mới" stylesheets="@styleBTH5.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="134.4" AnchorPane.topAnchor="125.0">
+                     <styleClass>
+                        <String fx:value="label-cauhoi" />
+                        <String fx:value="white_bg" />
+                        <String fx:value="radius" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Button fx:id="btnClear" layoutX="261.0" layoutY="123.0" mnemonicParsing="false" stylesheets="@styleBTH5.css" text="-" AnchorPane.rightAnchor="48.6">
+                     <styleClass>
+                        <String fx:value="btn-nav" />
+                        <String fx:value="circular-button" />
+                        <String fx:value="container" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="main-form" />
+                  <String fx:value="shadow" />
+                  <String fx:value="radius" />
+               </styleClass>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
